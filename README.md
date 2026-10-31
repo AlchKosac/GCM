@@ -13,10 +13,10 @@ Aplikace je v češtině, slovenštině a angličtině.
 
 ## Stažení
 
-**[⬇ Stáhnout gcm.exe (nejnovější verze)](https://github.com/AlchKosac/GCM/releases/latest/download/gcm.exe)** – stačí spustit, bez instalace (Windows 10 / 11). Přehled verzí a novinek je v sekci [Releases](../../releases). Další verze aplikace nabídne sama (automatická aktualizace).
+**[⬇ Stáhnout GCM (ZIP, nejnovější verze)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – rozbalte a spusťte `gcm.exe` ze složky „GCM - GamingConnectionMonitor“, nic se neinstaluje (Windows 10 / 11). Přehled verzí a novinek je v sekci [Releases](../../releases). Další verze aplikace nabídne sama (automatická aktualizace).
 
 Při prvním spuštění může Windows zobrazit varování SmartScreen (aplikace zatím není digitálně podepsaná) – zvolte „Další informace“ › „Přesto spustit“.
-Nastavení a naměřená data se ukládají do `%APPDATA%\GCM`.
+Nastavení a naměřená data se ukládají do `%APPDATA%\GCM` – vedle `gcm.exe` aplikace nic nevytváří, složku můžete přesunout kamkoli.
 
 ## Co je v tomto repozitáři
 
@@ -43,6 +43,6 @@ per-hop latency / jitter / loss tracing with a plain-language analysis, official
 plus own reachability checks (games are added by searching ready-made profiles), Xbox NAT / Teredo diagnostics,
 speed test with bufferbloat, DNS outage monitoring and link / Wi-Fi status. Available in Czech, Slovak and English.
 
-**[Download gcm.exe](https://github.com/AlchKosac/GCM/releases/latest/download/gcm.exe)** (latest, see [Releases](../../releases)) (Windows 10 / 11, no installation). Settings and data are stored in `%APPDATA%\GCM`.
+**[Download GCM (ZIP, latest)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – unzip and run `gcm.exe` (see [Releases](../../releases)) (Windows 10 / 11, no installation). Settings and data are stored in `%APPDATA%\GCM`.
 This repository contains the game profiles (`profiles/games.json`, downloaded by the app daily), translations (`lang/`)
 and releases – not the source code. Contact: [Discord](https://discord.gg/d6a4rkB666).
