@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "updated": "2026-10-31",
+  "profiles": [
+    {
+      "id": "xbox-live",
+      "name": "Xbox Live",
+      "publisher": "Microsoft",
+      "kind": "platform",
+      "search": ["xbox", "microsoft", "game pass"],
+      "status": { "kind": "xbox", "page": "https://support.xbox.com/xbox-live-status" },
+      "check": {
+        "host": "user.auth.xboxlive.com", "port": 443, "role": "login",
+        "label": { "cs": "přihlašovací server Xbox Live", "sk": "prihlasovací server Xbox Live", "en": "Xbox Live sign-in server" }
+      },
+      "interval_s": 60,
+      "info": {
+        "cs": "Oficiální stav ze stránky Xbox (účet, obchod, multiplayer, jednotlivé hry). Měří se spojení na přihlašovací server – herní servery jednotlivých her to nejsou.",
+        "sk": "Oficiálny stav zo stránky Xbox (účet, obchod, multiplayer, jednotlivé hry). Meria sa spojenie na prihlasovací server – herné servery jednotlivých hier to nie sú.",
+        "en": "Official status from the Xbox status page (account, store, multiplayer, individual games). The check measures the sign-in server – not the game servers of individual games."
+      }
+    },
+    {
+      "id": "psn",
+      "name": "PlayStation Network",
+      "publisher": "Sony",
+      "kind": "platform",
+      "search": ["playstation", "psn", "sony", "ps5", "ps4"],
+      "status": { "kind": "psn", "page": "https://status.playstation.com" },
+      "check": {
+        "host": "ca.account.sony.com", "port": 443, "role": "login",
+        "label": { "cs": "přihlašovací server Sony", "sk": "prihlasovací server Sony", "en": "Sony sign-in server" }
+      },
+      "interval_s": 60,
+      "info": {
+        "cs": "Oficiální stav ze stránky PlayStation pro vaši zemi. Měří se spojení na přihlašovací server účtu Sony.",
+        "sk": "Oficiálny stav zo stránky PlayStation pre vašu krajinu. Meria sa spojenie na prihlasovací server účtu Sony.",
+        "en": "Official status from the PlayStation status page for your country. The check measures the Sony account sign-in server."
+      }
+    },
+    {
+      "id": "diablo4",
+      "name": "Diablo IV",
+      "publisher": "Blizzard",
+      "kind": "game",
+      "search": ["diablo", "d4", "blizzard", "battle.net"],
+      "status": { "kind": "none", "page": "https://x.com/BlizzardCS" },
+      "check": {
+        "host": "eu.actual.battle.net", "port": 1119, "role": "login",
+        "label": { "cs": "přihlašovací brána Battle.net (Evropa)", "sk": "prihlasovacia brána Battle.net (Európa)", "en": "Battle.net sign-in gateway (Europe)" }
+      },
+      "interval_s": 60,
+      "processes": ["Diablo IV.exe"],
+      "links": [{ "label": "Blizzard CS (X)", "url": "https://x.com/BlizzardCS" }],
+      "info": {
+        "cs": "Blizzard nemá veřejné rozhraní se stavem serverů – výpadky a údržby hlásí jen na X (@BlizzardCS). Měří se dostupnost přihlašovací brány Battle.net pro Evropu, bez které se do hry nepřihlásíte; herní servery to nejsou.",
+        "sk": "Blizzard nemá verejné rozhranie so stavom serverov – výpadky a údržby hlási len na X (@BlizzardCS). Meria sa dostupnosť prihlasovacej brány Battle.net pre Európu, bez ktorej sa do hry neprihlásite; herné servery to nie sú.",
+        "en": "Blizzard has no public server status API – outages and maintenance are announced only on X (@BlizzardCS). The check measures the Battle.net sign-in gateway for Europe, which you need to log in; it is not a game server."
+      }
+    },
+    {
+      "id": "wow",
+      "name": "World of Warcraft",
+      "publisher": "Blizzard",
+      "kind": "game",
+      "search": ["wow", "warcraft", "world of warcraft", "classic", "blizzard", "battle.net"],
+      "status": { "kind": "none", "page": "https://worldofwarcraft.blizzard.com/en-gb/game/status/eu" },
+      "check": {
+        "host": "eu.actual.battle.net", "port": 1119, "role": "login",
+        "label": { "cs": "přihlašovací brána Battle.net (Evropa)", "sk": "prihlasovacia brána Battle.net (Európa)", "en": "Battle.net sign-in gateway (Europe)" }
+      },
+      "interval_s": 60,
+      "processes": ["Wow.exe", "WowClassic.exe"],
+      "links": [
+        { "label": "Realm status EU", "url": "https://worldofwarcraft.blizzard.com/en-gb/game/status/eu" },
+        { "label": "Blizzard CS (X)", "url": "https://x.com/BlizzardCS" }
+      ],
+      "info": {
+        "cs": "Stav realmů zveřejňuje Blizzard jen na webu; jeho datové rozhraní vyžaduje vlastní přístupový klíč, proto ho aplikace nestahuje. Měří se přihlašovací brána Battle.net pro Evropu – herní (realm) servery to nejsou.",
+        "sk": "Stav realmov zverejňuje Blizzard len na webe; jeho dátové rozhranie vyžaduje vlastný prístupový kľúč, preto ho aplikácia nesťahuje. Meria sa prihlasovacia brána Battle.net pre Európu – herné (realm) servery to nie sú.",
+        "en": "Blizzard publishes realm status only on its website; its data API needs a personal access key, so the app does not download it. The check measures the Battle.net sign-in gateway for Europe – not the realm servers."
+      }
+    },
+    {
+      "id": "dune-awakening",
+      "name": "Dune: Awakening",
+      "publisher": "Funcom",
+      "kind": "game",
+      "search": ["dune", "awakening", "funcom"],
+      "status": { "kind": "none", "page": "https://x.com/DuneAwakening" },
+      "links": [{ "label": "Dune: Awakening (X)", "url": "https://x.com/DuneAwakening" }],
+      "info": {
+        "cs": "Funcom nemá stavovou stránku ani veřejné rozhraní – údržby a výpadky hlásí na X a Discordu. Adresy herních serverů nejsou zveřejněné, proto se zatím nic neměří; server, na kterém hrajete, půjde zjistit ze sledování přenosu dat hry.",
+        "sk": "Funcom nemá stavovú stránku ani verejné rozhranie – údržby a výpadky hlási na X a Discorde. Adresy herných serverov nie sú zverejnené, preto sa zatiaľ nič nemeria; server, na ktorom hráte, bude možné zistiť zo sledovania prenosu dát hry.",
+        "en": "Funcom has no status page or public API – maintenance and outages are announced on X and Discord. Game server addresses are not published, so nothing is measured yet; the server you play on will be detectable from game traffic monitoring."
+      }
+    },
+    {
+      "id": "fortnite",
+      "name": "Fortnite",
+      "publisher": "Epic Games",
+      "kind": "game",
+      "search": ["fortnite", "epic", "lego fortnite", "festival"],
+      "status": { "kind": "statuspage", "url": "https://status.epicgames.com/api/v2/summary.json", "components": ["wf1ys2kx4pxc"], "page": "https://status.epicgames.com" },
+      "info": {
+        "cs": "Oficiální stav ze stránky Epic Games (přihlášení, matchmaking, herní služby, obchod) včetně plánovaných údržeb.",
+        "sk": "Oficiálny stav zo stránky Epic Games (prihlásenie, matchmaking, herné služby, obchod) vrátane plánovaných údržieb.",
+        "en": "Official status from the Epic Games status page (login, matchmaking, game services, shop) including scheduled maintenance."
+      }
+    },
+    {
+      "id": "rocket-league",
+      "name": "Rocket League",
+      "publisher": "Epic Games / Psyonix",
+      "kind": "game",
+      "search": ["rocket league", "psyonix", "epic"],
+      "status": { "kind": "statuspage", "url": "https://status.epicgames.com/api/v2/summary.json", "components": ["d4t23tydt16z"], "page": "https://status.epicgames.com" },
+      "info": {
+        "cs": "Oficiální stav ze stránky Epic Games včetně plánovaných údržeb.",
+        "sk": "Oficiálny stav zo stránky Epic Games vrátane plánovaných údržieb.",
+        "en": "Official status from the Epic Games status page including scheduled maintenance."
+      }
+    },
+    {
+      "id": "fall-guys",
+      "name": "Fall Guys",
+      "publisher": "Epic Games / Mediatonic",
+      "kind": "game",
+      "search": ["fall guys", "epic"],
+      "status": { "kind": "statuspage", "url": "https://status.epicgames.com/api/v2/summary.json", "components": ["dht2phs32530"], "page": "https://status.epicgames.com" },
+      "info": {
+        "cs": "Oficiální stav ze stránky Epic Games včetně plánovaných údržeb.",
+        "sk": "Oficiálny stav zo stránky Epic Games vrátane plánovaných údržieb.",
+        "en": "Official status from the Epic Games status page including scheduled maintenance."
+      }
+    },
+    {
+      "id": "epic-store",
+      "name": "Epic Games Store",
+      "publisher": "Epic Games",
+      "kind": "platform",
+      "search": ["epic", "store", "launcher", "egs"],
+      "status": { "kind": "statuspage", "url": "https://status.epicgames.com/api/v2/summary.json", "components": ["khtrdkxhxjd9"], "page": "https://status.epicgames.com" },
+      "info": {
+        "cs": "Oficiální stav obchodu a launcheru Epic Games (stahování, nákupy, přihlášení).",
+        "sk": "Oficiálny stav obchodu a launchera Epic Games (sťahovanie, nákupy, prihlásenie).",
+        "en": "Official status of the Epic Games Store and launcher (downloads, purchases, login)."
+      }
+    },
+    {
+      "id": "valorant",
+      "name": "Valorant",
+      "publisher": "Riot Games",
+      "kind": "game",
+      "search": ["valorant", "riot"],
+      "status": { "kind": "riot", "url": "https://valorant.secure.dyn.riotcdn.net/channels/public/x/status/eu.json", "page": "https://status.riotgames.com/valorant?region=eu" },
+      "info": {
+        "cs": "Oficiální stav ze stránky Riot Games pro Evropu (výpadky a údržby). Informativní hlášení (např. jedno nedostupné datacentrum) se zobrazí jako poznámka.",
+        "sk": "Oficiálny stav zo stránky Riot Games pre Európu (výpadky a údržby). Informatívne hlásenia (napr. jedno nedostupné dátové centrum) sa zobrazia ako poznámka.",
+        "en": "Official status from Riot Games for Europe (outages and maintenance). Informational notices (e.g. one unavailable data centre) are shown as a note."
+      }
+    },
+    {
+      "id": "lol-eune",
+      "name": "League of Legends (EU Nordic & East)",
+      "publisher": "Riot Games",
+      "kind": "game",
+      "search": ["league of legends", "lol", "riot", "eune"],
+      "status": { "kind": "riot", "url": "https://lol.secure.dyn.riotcdn.net/channels/public/x/status/eun1.json", "page": "https://status.riotgames.com/lol?region=eun1" },
+      "info": {
+        "cs": "Oficiální stav serveru EUNE (hrají na něm hlavně hráči z Česka a Slovenska) ze stránky Riot Games.",
+        "sk": "Oficiálny stav servera EUNE (hrajú na ňom hlavne hráči z Česka a Slovenska) zo stránky Riot Games.",
+        "en": "Official status of the EUNE server (where most Czech and Slovak players play) from Riot Games."
+      }
+    },
+    {
+      "id": "lol-euw",
+      "name": "League of Legends (EU West)",
+      "publisher": "Riot Games",
+      "kind": "game",
+      "search": ["league of legends", "lol", "riot", "euw"],
+      "status": { "kind": "riot", "url": "https://lol.secure.dyn.riotcdn.net/channels/public/x/status/euw1.json", "page": "https://status.riotgames.com/lol?region=euw1" },
+      "info": {
+        "cs": "Oficiální stav serveru EUW ze stránky Riot Games.",
+        "sk": "Oficiálny stav servera EUW zo stránky Riot Games.",
+        "en": "Official status of the EUW server from Riot Games."
+      }
+    },
+    {
+      "id": "eve-online",
+      "name": "EVE Online",
+      "publisher": "CCP Games",
+      "kind": "game",
+      "search": ["eve", "eve online", "ccp", "tranquility"],
+      "status": { "kind": "eve", "url": "https://esi.evetech.net/latest/status/", "page": "https://www.eveonline.com" },
+      "check": {
+        "host": "tranquility.servers.eveonline.com", "port": 26000, "role": "game",
+        "label": { "cs": "herní server Tranquility", "sk": "herný server Tranquility", "en": "Tranquility game server" }
+      },
+      "interval_s": 60,
+      "processes": ["exefile.exe"],
+      "info": {
+        "cs": "Oficiální stav serveru Tranquility z rozhraní CCP (počet hráčů online, denní údržba kolem 11:00 UTC). Měří se spojení přímo na herní server.",
+        "sk": "Oficiálny stav servera Tranquility z rozhrania CCP (počet hráčov online, denná údržba okolo 11:00 UTC). Meria sa spojenie priamo na herný server.",
+        "en": "Official Tranquility server status from the CCP API (players online, daily downtime around 11:00 UTC). The check measures the game server directly."
+      }
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "publisher": "Discord",
+      "kind": "service",
+      "search": ["discord", "voice", "chat"],
+      "status": { "kind": "statuspage", "url": "https://discordstatus.com/api/v2/summary.json", "page": "https://discordstatus.com" },
+      "info": {
+        "cs": "Oficiální stav Discordu (zprávy, hlasové kanály, přihlášení) včetně plánovaných údržeb.",
+        "sk": "Oficiálny stav Discordu (správy, hlasové kanály, prihlásenie) vrátane plánovaných údržieb.",
+        "en": "Official Discord status (messages, voice, login) including scheduled maintenance."
+      }
+    },
+    {
+      "id": "geforce-now",
+      "name": "GeForce NOW",
+      "publisher": "NVIDIA",
+      "kind": "service",
+      "search": ["geforce", "nvidia", "cloud gaming", "gfn"],
+      "status": { "kind": "statuspage", "url": "https://status.geforcenow.com/api/v2/summary.json", "page": "https://status.geforcenow.com" },
+      "info": {
+        "cs": "Oficiální stav cloudového hraní GeForce NOW (datacentra, přihlášení) včetně plánovaných údržeb.",
+        "sk": "Oficiálny stav cloudového hrania GeForce NOW (dátové centrá, prihlásenie) vrátane plánovaných údržieb.",
+        "en": "Official GeForce NOW cloud gaming status (data centres, login) including scheduled maintenance."
+      }
+    }
+  ]
+}
