@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "profiles": [
     {
       "id": "xbox-live",
@@ -56,6 +56,40 @@
         "cs": "Blizzard nemá veřejné rozhraní se stavem serverů – výpadky a údržby hlásí jen na X (@BlizzardCS). Měří se dostupnost přihlašovací brány Battle.net pro Evropu, bez které se do hry nepřihlásíte; herní servery to nejsou.",
         "sk": "Blizzard nemá verejné rozhranie so stavom serverov – výpadky a údržby hlási len na X (@BlizzardCS). Meria sa dostupnosť prihlasovacej brány Battle.net pre Európu, bez ktorej sa do hry neprihlásite; herné servery to nie sú.",
         "en": "Blizzard has no public server status API – outages and maintenance are announced only on X (@BlizzardCS). The check measures the Battle.net sign-in gateway for Europe, which you need to log in; it is not a game server."
+      }
+    },
+    {
+      "id": "diablo2-resurrected",
+      "name": "Diablo II: Resurrected",
+      "publisher": "Blizzard",
+      "kind": "game",
+      "search": ["diablo", "d2r", "diablo 2", "diablo ii", "resurrected", "blizzard", "battle.net"],
+      "status": { "kind": "none", "page": "https://x.com/BlizzardCS" },
+      "check": {
+        "host": "eu.actual.battle.net", "port": 1119, "role": "login",
+        "label": { "cs": "přihlašovací brána Battle.net (Evropa)", "sk": "prihlasovacia brána Battle.net (Európa)", "en": "Battle.net sign-in gateway (Europe)" }
+      },
+      "interval_s": 60,
+      "processes": ["D2R.exe"],
+      "links": [{ "label": "Blizzard CS (X)", "url": "https://x.com/BlizzardCS" }],
+      "info": {
+        "cs": "Blizzard nemá veřejné rozhraní se stavem serverů – výpadky a údržby hlásí jen na X (@BlizzardCS). Měří se dostupnost přihlašovací brány Battle.net pro Evropu; herní servery to nejsou. Pokročilé sledování provozu najde server, ke kterému se hra právě připojuje (D2R.exe).",
+        "sk": "Blizzard nemá verejné rozhranie so stavom serverov – výpadky a údržby hlási len na X (@BlizzardCS). Meria sa dostupnosť prihlasovacej brány Battle.net pre Európu; herné servery to nie sú. Pokročilé sledovanie prevádzky nájde server, ku ktorému sa hra práve pripája (D2R.exe).",
+        "en": "Blizzard has no public server status API – outages and maintenance are announced only on X (@BlizzardCS). The check measures the Battle.net sign-in gateway for Europe; it is not a game server. Advanced traffic monitoring finds the server the game is currently connected to (D2R.exe)."
+      }
+    },
+    {
+      "id": "aion2",
+      "name": "AION 2",
+      "publisher": "NCSoft",
+      "kind": "game",
+      "search": ["aion", "aion 2", "aion2", "ncsoft", "mmorpg"],
+      "status": { "kind": "none" },
+      "processes": ["AION2.exe"],
+      "info": {
+        "cs": "AION 2 nemá veřejný stav serverů ani známou adresu, kterou by šlo spolehlivě měřit, proto tu není oficiální ani naměřený stav. Smysl má pokročilé sledování provozu: když je hra spuštěná (AION2.exe), ukáže přenos dat, server, ke kterému se připojuje, a zastavení toku; volitelně i porovnání s trasou.",
+        "sk": "AION 2 nemá verejný stav serverov ani známu adresu, ktorú by šlo spoľahlivo merať, preto tu nie je oficiálny ani nameraný stav. Zmysel má pokročilé sledovanie prevádzky: keď je hra spustená (AION2.exe), ukáže prenos dát, server, ku ktorému sa pripája, a zastavenie toku; voliteľne aj porovnanie s trasou.",
+        "en": "AION 2 has no public server status and no known address that could be measured reliably, so there is no official or measured status. Advanced traffic monitoring is what helps: while the game runs (AION2.exe) it shows data transfer, the server it connects to and flow stalls; optionally also the route comparison."
       }
     },
     {
@@ -212,10 +246,16 @@
       "kind": "service",
       "search": ["discord", "voice", "chat"],
       "status": { "kind": "statuspage", "url": "https://discordstatus.com/api/v2/summary.json", "page": "https://discordstatus.com" },
+      "check": {
+        "host": "gateway.discord.gg", "port": 443, "role": "login",
+        "label": { "cs": "brána Discordu (gateway)", "sk": "brána Discordu (gateway)", "en": "Discord gateway" }
+      },
+      "interval_s": 60,
+      "processes": ["Discord.exe", "DiscordPTB.exe", "DiscordCanary.exe"],
       "info": {
-        "cs": "Oficiální stav Discordu (zprávy, hlasové kanály, přihlášení) včetně plánovaných údržeb.",
-        "sk": "Oficiálny stav Discordu (správy, hlasové kanály, prihlásenie) vrátane plánovaných údržieb.",
-        "en": "Official Discord status (messages, voice, login) including scheduled maintenance."
+        "cs": "Oficiální stav Discordu (zprávy, hlasové kanály, přihlášení) včetně plánovaných údržeb. Měří se dostupnost brány Discordu. Pokročilé sledování provozu ukáže, kolik dat aplikace přenáší (hlas, video, sdílení obrazovky) a ke kterému serveru se připojuje – při hovoru jde o hlasový server.",
+        "sk": "Oficiálny stav Discordu (správy, hlasové kanály, prihlásenie) vrátane plánovaných údržieb. Meria sa dostupnosť brány Discordu. Pokročilé sledovanie prevádzky ukáže, koľko dát aplikácia prenáša (hlas, video, zdieľanie obrazovky) a ku ktorému serveru sa pripája – pri hovore ide o hlasový server.",
+        "en": "Official Discord status (messages, voice, login) including scheduled maintenance. The check measures the Discord gateway. Advanced traffic monitoring shows how much data the app transfers (voice, video, screen sharing) and which server it connects to – during a call that is the voice server."
       }
     },
     {
@@ -229,6 +269,77 @@
         "cs": "Oficiální stav cloudového hraní GeForce NOW (datacentra, přihlášení) včetně plánovaných údržeb.",
         "sk": "Oficiálny stav cloudového hrania GeForce NOW (dátové centrá, prihlásenie) vrátane plánovaných údržieb.",
         "en": "Official GeForce NOW cloud gaming status (data centres, login) including scheduled maintenance."
+      }
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "publisher": "Valve",
+      "kind": "platform",
+      "search": ["steam", "valve", "store", "community", "obchod"],
+      "status": {
+        "kind": "probe",
+        "urls": [
+          "https://api.steampowered.com/ISteamWebAPIUtil/GetServerInfo/v1/",
+          "https://store.steampowered.com/",
+          "https://steamcommunity.com/",
+          "https://api.steampowered.com/ISteamDirectory/GetCMListForConnect/v1/?cellid=0&cmtype=websockets"
+        ],
+        "page": "https://steamstat.us"
+      },
+      "check": {
+        "host": "api.steampowered.com", "port": 443, "role": "web",
+        "label": { "cs": "Steam Web API", "sk": "Steam Web API", "en": "Steam Web API" }
+      },
+      "interval_s": 60,
+      "links": [{ "label": "steamstat.us (komunitní)", "url": "https://steamstat.us" }],
+      "info": {
+        "cs": "Valve nezveřejňuje stavové rozhraní, proto aplikace přímo ověřuje dostupnost služeb Steamu z vašeho připojení: Steam Web API, obchod, komunitu a seznam přihlašovacích serverů (Connection Managers). Odkaz vede na komunitní přehled steamstat.us.",
+        "sk": "Valve nezverejňuje stavové rozhranie, preto aplikácia priamo overuje dostupnosť služieb Steamu z vášho pripojenia: Steam Web API, obchod, komunitu a zoznam prihlasovacích serverov (Connection Managers). Odkaz vedie na komunitný prehľad steamstat.us.",
+        "en": "Valve publishes no status API, so the app checks Steam services directly from your connection: the Steam Web API, the store, the community and the list of sign-in servers (Connection Managers). The link goes to the community overview steamstat.us."
+      }
+    },
+    {
+      "id": "gog",
+      "name": "GOG",
+      "publisher": "CD Projekt",
+      "kind": "platform",
+      "search": ["gog", "good old games", "galaxy", "cd projekt"],
+      "status": {
+        "kind": "probe",
+        "urls": ["https://www.gog.com/", "https://api.gog.com/products?limit=1"]
+      },
+      "check": {
+        "host": "www.gog.com", "port": 443, "role": "web",
+        "label": { "cs": "obchod GOG", "sk": "obchod GOG", "en": "GOG store" }
+      },
+      "interval_s": 60,
+      "links": [{ "label": "GOG (X)", "url": "https://x.com/GOGcom" }],
+      "info": {
+        "cs": "GOG nemá veřejnou stavovou stránku, proto aplikace přímo ověřuje dostupnost obchodu a jeho API z vašeho připojení. Výpadky a údržby GOG hlásí na X.",
+        "sk": "GOG nemá verejnú stavovú stránku, preto aplikácia priamo overuje dostupnosť obchodu a jeho API z vášho pripojenia. Výpadky a údržby GOG hlási na X.",
+        "en": "GOG has no public status page, so the app checks the availability of the store and its API directly from your connection. GOG announces outages and maintenance on X."
+      }
+    },
+    {
+      "id": "osrs",
+      "name": "Old School RuneScape",
+      "publisher": "Jagex",
+      "kind": "game",
+      "search": ["osrs", "runescape", "old school", "jagex", "runelite", "mmorpg"],
+      "status": { "kind": "osrs", "url": "https://oldschool.runescape.com/slr.ws?order=WMLPA", "page": "https://oldschool.runescape.com/" },
+      "check": {
+        "host": "oldschool{}.runescape.com", "port": 43594, "role": "game",
+        "world": { "default": 301, "min": 301, "max": 580, "offset": 300 },
+        "label": { "cs": "vybraný herní svět", "sk": "vybraný herný svet", "en": "selected game world" }
+      },
+      "interval_s": 60,
+      "processes": ["osclient.exe", "RuneLite.exe"],
+      "links": [{ "label": "OSRS (X)", "url": "https://x.com/OldSchoolRS" }],
+      "info": {
+        "cs": "Oficiální stav ze seznamu světů, který používá i klient hry: počet hráčů online a světy, které jsou offline (údržba, výpadek). Měří se spojení na herní svět, který si zvolíte u položky (výchozí 301); skutečný svět, na kterém hrajete, najde pokročilé sledování provozu (klient osclient.exe nebo RuneLite).",
+        "sk": "Oficiálny stav zo zoznamu svetov, ktorý používa aj klient hry: počet hráčov online a svety, ktoré sú offline (údržba, výpadok). Meria sa spojenie na herný svet, ktorý si zvolíte pri položke (predvolený 301); skutočný svet, na ktorom hráte, nájde pokročilé sledovanie prevádzky (klient osclient.exe alebo RuneLite).",
+        "en": "Official status from the world list that the game client uses too: players online and worlds that are offline (maintenance, outage). The check measures the connection to the game world you choose on the item (default 301); the world you actually play on is found by advanced traffic monitoring (client osclient.exe or RuneLite)."
       }
     }
   ]
