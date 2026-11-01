@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "profiles": [
     {
       "id": "xbox-live",
@@ -93,7 +93,71 @@
       }
     },
     {
+      "id": "poe",
+      "name": "Path of Exile",
+      "publisher": "Grinding Gear Games",
+      "kind": "game",
+      "search": ["poe", "poe1", "path of exile", "exile", "ggg", "grinding gear"],
+      "status": { "kind": "probe", "urls": ["https://www.pathofexile.com/"], "page": "https://www.pathofexile.com/forum" },
+      "check": {
+        "host": "www.pathofexile.com", "port": 443, "role": "web",
+        "label": { "cs": "web pathofexile.com", "sk": "web pathofexile.com", "en": "pathofexile.com website" }
+      },
+      "interval_s": 60,
+      "processes": ["PathOfExile.exe", "PathOfExile_x64.exe", "PathOfExileSteam.exe", "PathOfExile_x64Steam.exe"],
+      "links": [{ "label": "GGG (X)", "url": "https://x.com/pathofexile" }],
+      "info": {
+        "cs": "GGG nemá veřejné rozhraní se stavem serverů – výpadky a údržby hlásí na fóru a na X. Aplikace proto z vašeho připojení ověřuje dostupnost webu pathofexile.com; herní server to není. Skutečný herní server najde pokročilé sledování provozu. Path of Exile 2 používá stejné názvy programů – při střídání obou her mějte zapnuté sledování jen u té, kterou právě hrajete.",
+        "sk": "GGG nemá verejné rozhranie so stavom serverov – výpadky a údržby hlási na fóre a na X. Aplikácia preto z vášho pripojenia overuje dostupnosť webu pathofexile.com; herný server to nie je. Skutočný herný server nájde pokročilé sledovanie prevádzky. Path of Exile 2 používa rovnaké názvy programov – pri striedaní oboch hier majte zapnuté sledovanie len pri tej, ktorú práve hráte.",
+        "en": "GGG has no public server status API – outages and maintenance are announced on the forum and on X. The app therefore checks from your connection that the pathofexile.com website is reachable; it is not a game server. Advanced traffic monitoring finds the real game server. Path of Exile 2 uses the same program names – if you play both, keep monitoring on only for the one you are playing."
+      }
+    },
+    {
+      "id": "poe2",
+      "name": "Path of Exile 2",
+      "publisher": "Grinding Gear Games",
+      "kind": "game",
+      "search": ["poe2", "poe 2", "path of exile 2", "exile", "ggg", "grinding gear"],
+      "status": { "kind": "probe", "urls": ["https://pathofexile2.com/"], "page": "https://www.pathofexile.com/forum" },
+      "check": {
+        "host": "pathofexile2.com", "port": 443, "role": "web",
+        "label": { "cs": "web pathofexile2.com", "sk": "web pathofexile2.com", "en": "pathofexile2.com website" }
+      },
+      "interval_s": 60,
+      "processes": ["PathOfExile.exe", "PathOfExile_x64.exe", "PathOfExileSteam.exe", "PathOfExile_x64Steam.exe"],
+      "links": [{ "label": "GGG (X)", "url": "https://x.com/pathofexile" }],
+      "info": {
+        "cs": "GGG nemá veřejné rozhraní se stavem serverů – výpadky a údržby hlásí na fóru a na X. Aplikace proto z vašeho připojení ověřuje dostupnost webu pathofexile2.com; herní server to není. Skutečný herní server najde pokročilé sledování provozu. Path of Exile 1 používá stejné názvy programů – při střídání obou her mějte zapnuté sledování jen u té, kterou právě hrajete.",
+        "sk": "GGG nemá verejné rozhranie so stavom serverov – výpadky a údržby hlási na fóre a na X. Aplikácia preto z vášho pripojenia overuje dostupnosť webu pathofexile2.com; herný server to nie je. Skutočný herný server nájde pokročilé sledovanie prevádzky. Path of Exile 1 používa rovnaké názvy programov – pri striedaní oboch hier majte zapnuté sledovanie len pri tej, ktorú práve hráte.",
+        "en": "GGG has no public server status API – outages and maintenance are announced on the forum and on X. The app therefore checks from your connection that the pathofexile2.com website is reachable; it is not a game server. Advanced traffic monitoring finds the real game server. Path of Exile 1 uses the same program names – if you play both, keep monitoring on only for the one you are playing."
+      }
+    },
+    {
+      "id": "warframe",
+      "name": "Warframe",
+      "publisher": "Digital Extremes",
+      "kind": "game",
+      "search": ["warframe", "digital extremes", "tenno"],
+      "status": {
+        "kind": "probe", "every_s": 3600,
+        "urls": ["https://api.warframe.com/cdn/worldState.php", "https://content.warframe.com/"]
+      },
+      "check": {
+        "host": "api.warframe.com", "port": 443, "role": "web",
+        "label": { "cs": "API Warframe (api.warframe.com)", "sk": "API Warframe (api.warframe.com)", "en": "Warframe API (api.warframe.com)" }
+      },
+      "interval_s": 60,
+      "processes": ["Warframe.x64.exe", "Warframe.exe"],
+      "links": [{ "label": "Warframe (X)", "url": "https://x.com/PlayWarframe" }],
+      "info": {
+        "cs": "Digital Extremes nemá veřejné rozhraní se stavem serverů. Aplikace proto ověřuje jen dostupnost API (api.warframe.com, stav světa hry) a obsahu (content.warframe.com), ne herní servery. Kontrola se dělá jen jednou za hodinu (nebo tlačítkem ⟳), protože odpověď API je velká (asi 190 kB) a nechceme zbytečně zatěžovat cizí server. Skutečný herní server najde pokročilé sledování provozu.",
+        "sk": "Digital Extremes nemá verejné rozhranie so stavom serverov. Aplikácia preto overuje len dostupnosť API (api.warframe.com, stav sveta hry) a obsahu (content.warframe.com), nie herné servery. Kontrola sa robí len raz za hodinu (alebo tlačidlom ⟳), pretože odpoveď API je veľká (asi 190 kB) a nechceme zbytočne zaťažovať cudzí server. Skutočný herný server nájde pokročilé sledovanie prevádzky.",
+        "en": "Digital Extremes has no public server status API. The app therefore checks only the availability of the API (api.warframe.com, the game's world state) and of the content server (content.warframe.com), not the game servers. The check runs only once an hour (or with the ⟳ button) because the API response is large (about 190 kB) and we do not want to burden a third-party server. Advanced traffic monitoring finds the real game server."
+      }
+    },
+    {
       "id": "wow",
+
       "name": "World of Warcraft",
       "publisher": "Blizzard",
       "kind": "game",
