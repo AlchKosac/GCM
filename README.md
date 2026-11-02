@@ -1,4 +1,6 @@
-# GamingConnectionMonitor (GCM)
+<p align="center"><img src="docs/logo-animated.svg" width="128" height="128" alt="GCM logo"></p>
+
+<h1 align="center">GamingConnectionMonitor (GCM)</h1>
 
 **Česky** · [English](#english)
 
