@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-09",
+  "updated": "2026-11-19",
   "profiles": [
     {
       "id": "xbox-live",
@@ -404,6 +404,60 @@
         "cs": "Oficiální stav ze seznamu světů, který používá i klient hry: počet hráčů online a světy, které jsou offline (údržba, výpadek). Měří se spojení na herní svět, který si zvolíte u položky (výchozí 301); skutečný svět, na kterém hrajete, najde pokročilé sledování provozu (klient osclient.exe nebo RuneLite).",
         "sk": "Oficiálny stav zo zoznamu svetov, ktorý používa aj klient hry: počet hráčov online a svety, ktoré sú offline (údržba, výpadok). Meria sa spojenie na herný svet, ktorý si zvolíte pri položke (predvolený 301); skutočný svet, na ktorom hráte, nájde pokročilé sledovanie prevádzky (klient osclient.exe alebo RuneLite).",
         "en": "Official status from the world list that the game client uses too: players online and worlds that are offline (maintenance, outage). The check measures the connection to the game world you choose on the item (default 301); the world you actually play on is found by advanced traffic monitoring (client osclient.exe or RuneLite)."
+      }
+    },
+    {
+      "id": "uo-classic",
+      "name": "Ultima Online Classic",
+      "publisher": "Broadsword / Electronic Arts",
+      "kind": "game",
+      "search": ["uo", "ultima", "ultima online", "classic", "broadsword", "ea", "mmorpg", "britannia"],
+      "status": { "kind": "none", "page": "https://uo.com/" },
+      "check": {
+        "host": "75.2.70.184", "port": 7775, "role": "login",
+        "label": { "cs": "přihlašovací server Ultima Online", "sk": "prihlasovací server Ultima Online", "en": "Ultima Online login server" }
+      },
+      "interval_s": 60,
+      "processes": ["client.exe", "ClassicUO.exe"],
+      "links": [{ "label": "uo.com", "url": "https://uo.com/" }],
+      "info": {
+        "cs": "Ultima Online nemá veřejné rozhraní se stavem serverů. Měří se dostupnost přihlašovacího serveru (adresa z Login.cfg klienta), bez kterého se nepřipojíte; konkrétní svět (shard) to nejsou. Smysl má i pokročilý monitoring: ukáže herní server a zastavení toku dat.",
+        "sk": "Ultima Online nemá verejné rozhranie so stavom serverov. Meria sa dostupnosť prihlasovacieho servera (adresa z Login.cfg klienta), bez ktorého sa nepripojíte; konkrétny svet (shard) to nie je. Zmysel má aj pokročilý monitoring: ukáže herný server a zastavenie toku dát.",
+        "en": "Ultima Online has no public server status API. The check measures the login server (the address from the client's Login.cfg) that you need to connect; it is not an individual world (shard). Advanced monitoring helps too: it shows the game server and a stop in the data flow."
+      }
+    },
+    {
+      "id": "uo-enhanced",
+      "name": "Ultima Online Enhanced",
+      "publisher": "Broadsword / Electronic Arts",
+      "kind": "game",
+      "search": ["uo", "ultima", "ultima online", "enhanced", "uosa", "broadsword", "ea", "mmorpg", "britannia"],
+      "status": { "kind": "none", "page": "https://uo.com/" },
+      "check": {
+        "host": "75.2.70.184", "port": 7775, "role": "login",
+        "label": { "cs": "přihlašovací server Ultima Online", "sk": "prihlasovací server Ultima Online", "en": "Ultima Online login server" }
+      },
+      "interval_s": 60,
+      "processes": ["UOSA.exe"],
+      "links": [{ "label": "uo.com", "url": "https://uo.com/" }],
+      "info": {
+        "cs": "Ultima Online nemá veřejné rozhraní se stavem serverů. Měří se dostupnost přihlašovacího serveru, který používají oba klienty (Classic i Enhanced); konkrétní svět (shard) to není. Smysl má i pokročilý monitoring: ukáže herní server a zastavení toku dat.",
+        "sk": "Ultima Online nemá verejné rozhranie so stavom serverov. Meria sa dostupnosť prihlasovacieho servera, ktorý používajú oba klienty (Classic aj Enhanced); konkrétny svet (shard) to nie je. Zmysel má aj pokročilý monitoring: ukáže herný server a zastavenie toku dát.",
+        "en": "Ultima Online has no public server status API. The check measures the login server that both clients (Classic and Enhanced) use; it is not an individual world (shard). Advanced monitoring helps too: it shows the game server and a stop in the data flow."
+      }
+    },
+    {
+      "id": "uo-freeshard",
+      "name": "Ultima Online – free shard",
+      "publisher": "komunita / community",
+      "kind": "game",
+      "search": ["uo", "ultima", "ultima online", "free shard", "freeshard", "shard", "unofficial", "neoficiální", "classicuo", "razor", "servuo", "mmorpg"],
+      "status": { "kind": "none" },
+      "processes": ["ClassicUO.exe", "client.exe"],
+      "info": {
+        "cs": "Neoficiální (free) shardy nemají společnou adresu ani stav serverů, proto tu není oficiální ani naměřený stav. Smysl má pokročilý monitoring: adresu herního serveru pozná aplikace z komunikace klienta (ClassicUO nebo klient s upraveným Login.cfg), změří k němu trasu a ohlásí zastavení toku dat. Chcete-li hlídat i dostupnost konkrétního shardu, přidejte ho navíc jako vlastní službu (adresa a port, např. z Login.cfg).",
+        "sk": "Neoficiálne (free) shardy nemajú spoločnú adresu ani stav serverov, preto tu nie je oficiálny ani nameraný stav. Zmysel má pokročilý monitoring: adresu herného servera pozná aplikácia z komunikácie klienta (ClassicUO alebo klient s upraveným Login.cfg), zmeria k nemu trasu a ohlási zastavenie toku dát. Ak chcete strážiť aj dostupnosť konkrétneho shardu, pridajte ho navyše ako vlastnú službu (adresa a port, napr. z Login.cfg).",
+        "en": "Unofficial (free) shards have no common address or server status, so there is no official or measured status here. Advanced monitoring is what helps: the app finds the game server address from the client's traffic (ClassicUO or a client with an edited Login.cfg), measures the route to it and reports a stop in the data flow. To also watch the availability of a particular shard, add it as a custom service (address and port, e.g. from Login.cfg)."
       }
     }
   ],
