@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo-animated.svg" width="128" height="128" alt="GCM logo"></p>
 
-<h1 align="center">GamingConnectionMonitor (GCM)</h1>
+<h1 align="center">Gaming Connection Monitor (GCM)</h1>
 
 **English** · [Česky](#česky)
 
@@ -25,7 +25,7 @@ Available in English, Czech and Slovak.
 
 ## Download
 
-**[Download GCM (ZIP, latest)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – unzip and run `gcm.exe` from the "GCM - GamingConnectionMonitor" folder, no installation needed (Windows 10 / 11). All versions and release notes are in [Releases](../../releases). The app offers new versions by itself (automatic update).
+**[Download GCM (ZIP, latest)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – unzip and run `gcm.exe` from the "GCM - Gaming Connection Monitor" folder, no installation needed (Windows 10 / 11). All versions and release notes are in [Releases](../../releases). The app offers new versions by itself (automatic update).
 
 On first start Windows SmartScreen may show a warning (the app is not code-signed yet) – choose "More info" › "Run anyway".
 Settings and measured data are stored in `%APPDATA%\GCM`; nothing is created next to `gcm.exe`, so you can move the folder anywhere.
@@ -71,7 +71,7 @@ Aplikace je v angličtině, češtině a slovenštině.
 
 ### Stažení
 
-**[⬇ Stáhnout GCM (ZIP, nejnovější verze)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – rozbalte a spusťte `gcm.exe` ze složky „GCM - GamingConnectionMonitor“, nic se neinstaluje (Windows 10 / 11). Přehled verzí a novinek je v sekci [Releases](../../releases). Další verze aplikace nabídne sama (automatická aktualizace).
+**[⬇ Stáhnout GCM (ZIP, nejnovější verze)](https://github.com/AlchKosac/GCM/releases/latest/download/GCM-win64.zip)** – rozbalte a spusťte `gcm.exe` ze složky „GCM - Gaming Connection Monitor“, nic se neinstaluje (Windows 10 / 11). Přehled verzí a novinek je v sekci [Releases](../../releases). Další verze aplikace nabídne sama (automatická aktualizace).
 
 Při prvním spuštění může Windows zobrazit varování SmartScreen (aplikace zatím není digitálně podepsaná) – zvolte „Další informace“ › „Přesto spustit“.
 Nastavení a naměřená data se ukládají do `%APPDATA%\GCM` – vedle `gcm.exe` aplikace nic nevytváří, složku můžete přesunout kamkoli.
